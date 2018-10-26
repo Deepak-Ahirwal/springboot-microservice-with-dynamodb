@@ -68,6 +68,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+		          <profiles>
+		            <profile>develop</profile>
+		            <profile>qa</profile>
+		            <profile>docker</profile>
+		            <profile>cloud</profile>
+		             <source>1.8</source>
+            		 <target>1.8</target>
+		          </profiles>
+		        </configuration>
 			</plugin>
 		</plugins>
 	</build>

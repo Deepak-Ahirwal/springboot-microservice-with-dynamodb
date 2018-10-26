@@ -6,7 +6,6 @@
 	<groupId>com.cts.microservices</groupId>
 	<artifactId>message-retrieval-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>message-retrieval-service</name>
 	<description>Demo project for Spring Boot</description>
@@ -47,6 +46,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,12 +62,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb -->
-		<!-- <dependency>
-		    <groupId>com.amazonaws</groupId>
-		    <artifactId>aws-java-sdk-dynamodb</artifactId>
-		    <version>1.11.409</version>
-		</dependency> -->
 		<dependency>
 	      <groupId>com.amazonaws</groupId>
 	      <artifactId>aws-java-sdk</artifactId>
@@ -76,6 +74,19 @@
 		    <groupId>com.github.derjust</groupId>
 		    <artifactId>spring-data-dynamodb</artifactId>
 		    <version>5.0.3</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.2</version>
+		    <scope>provided</scope>
+		</dependency>
+				
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 		
 	</dependencies>
@@ -97,6 +108,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+		          <profiles>
+		            <profile>develop</profile>
+		            <profile>qa</profile>
+		            <profile>docker</profile>
+		            <profile>cloud</profile>
+		             <source>1.8</source>
+            		 <target>1.8</target>
+		          </profiles>
+		        </configuration>
 			</plugin>
 		</plugins>
 	</build>

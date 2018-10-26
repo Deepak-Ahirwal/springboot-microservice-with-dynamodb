@@ -8,6 +8,8 @@ import com.cts.microservices.messageretrievalservice.model.IotMqttPublishedMsg;
 @EnableScan
 public interface IotMqttPublishedMsgReository extends CrudRepository<IotMqttPublishedMsg, String>{
 
+	//List<IotMqttPublishedMsg> save(List<IotMqttPublishedMsg> asList);
+
 	
 
 }

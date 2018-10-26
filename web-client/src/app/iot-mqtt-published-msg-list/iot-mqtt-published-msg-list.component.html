@@ -1,0 +1,14 @@
+<h4>Message Details</h4>
+
+<!-- <div *ngFor="let iotMqttPublishedMsg of iotMqttPublishedMsgs | async" style="width: 300px;">
+  <app-iot-mqtt-published-msg-details [iotMqttPublishedMsg]='iotMqttPublishedMsg'></app-iot-mqtt-published-msg-details>
+</div> -->
+
+<table>
+	<tbody>
+		<tr *ngFor="let iotMqttPublishedMsg of iotMqttPublishedMsgs | async"
+			style="width: 300px;">
+			<app-iot-mqtt-published-msg-details [iotMqttPublishedMsg]='iotMqttPublishedMsg'></app-iot-mqtt-published-msg-details>
+		</tr>
+	</tbody>
+</table>

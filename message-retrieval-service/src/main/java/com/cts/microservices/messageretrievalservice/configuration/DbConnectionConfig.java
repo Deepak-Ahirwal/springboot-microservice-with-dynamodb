@@ -32,7 +32,7 @@ public class DbConnectionConfig {
 			 throw new AmazonClientException(
 	                    "Cannot load the credentials from the credential profiles file. " +
 	                    "Please make sure that your credentials file is at the correct " +
-	                    "location (C:\\Users\\...\\.aws\\credentials), and is in valid format.",
+	                    "location (C:\\Users\\Deepak\\.aws\\credentials), and is in valid format.",
 	                    e);
 		}
 		 
@@ -43,5 +43,4 @@ public class DbConnectionConfig {
 	            .build();
 		return dynamoDB;
 	}
-
 }
