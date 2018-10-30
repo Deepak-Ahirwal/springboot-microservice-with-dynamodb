@@ -24,7 +24,7 @@
 -Dserver.port=9003 for exchange service  
 
 ## How to run?
-### Below are the vm arguments like develop (-Drun.profiles=develop),we can also pass the vm arguments foe qa,docker and cloud.
+### Below are the vm arguments like develop (-Drun.profiles=develop),we can also pass the vm arguments for qa,docker and cloud.
 - develop for *Development environment*
 - qa for *QA environment*
 - docker for *Docker image environment*
