@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: develop
+---
+spring:
+  profiles: develop
+server:
+  port: 8761
+
+# Defines the Eureka server that is used by the Netflix OSS components to use as the registry
+# for server discovery
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      
+      
+#      
+#eureka:
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:8761/eureka/
+#  instance:
+#      prefer-ip-address: true
+#      ip-address: 127.0.0.1
+#      instance-id: ${spring.application.name}:${random.value}

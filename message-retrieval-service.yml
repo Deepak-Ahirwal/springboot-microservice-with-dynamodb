@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: develop
+---
+spring:
+  profiles: develop
+server:
+  port: 8766
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
