@@ -1,0 +1,90 @@
+spring:
+  profiles:
+    active: qa
+---
+spring:
+  profiles: develop
+server:
+  port: 8765
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    message-retrieval-service:
+      service-id: /message-retrieval-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /message/**
+      url: "http://localhost:8766"
+      strip-prefix: false
+    web-portal:
+      service-id: /web-portal/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /**
+      url: "http://localhost:8767"
+      strip-prefix: false
+    conversion-service:
+      service-id: /conversion-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /conversion/**
+      url: "http://localhost:7000"
+      strip-prefix: false
+    exchange-service:
+      service-id: /exchange-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /exchange/**
+      url: "http://localhost:9002"
+      strip-prefix: false
+---
+spring:
+  profiles: qa
+server:
+  port: 8765
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    message-retrieval-service:
+      service-id: /message-retrieval-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /message/**
+      url: "http://localhost:8766"
+      strip-prefix: false
+    web-portal:
+      service-id: /web-portal/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /**
+      url: "http://localhost:8767"
+      strip-prefix: false
+    conversion-service:
+      service-id: /conversion-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /conversion/**
+      url: "http://localhost:7000"
+      strip-prefix: false
+    exchange-service:
+      service-id: /exchange-service/**
+      stripPrefix: false
+      sensitiveHeaders: Authorization
+      path: /exchange/**
+      url: "http://localhost:9002"
+      strip-prefix: false
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+      
+      
