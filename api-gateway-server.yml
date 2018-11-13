@@ -9,7 +9,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://54.209.34.61:8761/eureka/
+      defaultZone: http://54.209.34.61:9768/eureka/
 zuul:
   routes:
     message-retrieval-service:
@@ -48,7 +48,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://54.209.34.61:8761/eureka/
+      defaultZone: http://54.209.34.61:9768/eureka/
 zuul:
   routes:
     message-retrieval-service:
