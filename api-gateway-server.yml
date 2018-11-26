@@ -14,7 +14,7 @@ zuul:
       stripPrefix: false
       sensitiveHeaders: Authorization
       path: /message/**
-      url: "http://localhost:8766"
+      url: "http://54.209.34.61:9766"
       strip-prefix: false
     web-portal:
       service-id: /web-portal/**
@@ -50,7 +50,7 @@ zuul:
       stripPrefix: false
       sensitiveHeaders: Authorization
       path: /message/**
-      url: "http://localhost:8766"
+      url: "http://54.209.34.61:9766"
       strip-prefix: false
     web-portal:
       service-id: /web-portal/**
